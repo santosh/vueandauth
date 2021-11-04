@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Messages msg="You are buffalo" />
+    <Messages title="Messages" />
   </div>
 </template>
 

@@ -1,16 +1,20 @@
 <template>
   <div>
-    <h4>{{ msg }}</h4>
-    <ul>
-      <li>1st</li>
-      <li>2nd</li>
+    <h4>{{ title }}</h4>
+    <ul v-for="(message, index) in messages" :key="index">
+      <li>{{ message }}</li>
     </ul>
   </div>
 </template>
 
 <script>
   export default {
-    component: 'Messages',
-    props: ['msg']
+    name: 'Messages',
+    props: ['title'],
+    data() {
+      return {
+        messages: ['1st', '2nd']
+      }
+    }
   }
 </script>
