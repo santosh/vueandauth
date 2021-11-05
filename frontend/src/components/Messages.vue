@@ -16,13 +16,18 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
     name: 'Messages',
     props: ['title'],
     data() {
       return {
-        messages: ['1st', '2nd']
+        messages: []
       }
+    },
+    async created() {
+      this.messages = (await axios.get('http://localhost:3000/messages')).data
     }
   }
 </script>
